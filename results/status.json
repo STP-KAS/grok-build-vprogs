@@ -1,0 +1,72 @@
+{
+  "wallet_rpc": "wss://boson-10.kaspa.red/kaspa/testnet-10/wrpc/borsh",
+  "server": {
+    "rpcApiVersion": 1,
+    "rpcApiRevision": 0,
+    "serverVersion": "2.0.1",
+    "networkId": "testnet-10",
+    "hasUtxoIndex": true,
+    "isSynced": true,
+    "virtualDaaScore": 580328846
+  },
+  "sync": {
+    "isSynced": true
+  },
+  "dag_virtual_daa": 580328848,
+  "dag_sink": "f44b9a5a12ea265ee4867515bdeb78beb788b5853c351801fd77767fa0023d0f",
+  "dag_past_median_time": 1790363789192,
+  "explorer_virtual_daa": "580329163",
+  "explorer_block_count": "1189625",
+  "node_block_count": 1189310,
+  "daa_delta_node_minus_explorer": -315,
+  "fees": {
+    "estimate": {
+      "priorityBucket": {
+        "feerate": 100.0,
+        "estimatedSeconds": 0.00020648526626361113
+      },
+      "normalBuckets": [
+        {
+          "feerate": 100.0,
+          "estimatedSeconds": 0.00020648526626361113
+        },
+        {
+          "feerate": 100.0,
+          "estimatedSeconds": 0.00020648526626361113
+        }
+      ],
+      "lowBuckets": [
+        {
+          "feerate": 100.0,
+          "estimatedSeconds": 0.00020648526626361113
+        }
+      ]
+    }
+  },
+  "balance_sompi": 10120322632563,
+  "balance_kas": 101203.22632563,
+  "utxo_count": 349,
+  "addr0": "kaspatest:qr90yfltgn4sm56gdtyg9hvl4mv47c0lhsugs308w8x78kljdngzgg62pkxkm",
+  "addr1": "kaspatest:qppm5pxvp0u2ahrqwunhdyzvq96uyn27q3kkdvyu9gjae4sfwajf2mwddfgvf",
+  "resolver_sample": [
+    "wss://vector-10.kaspa.green/kaspa/testnet-10/wrpc/borsh",
+    "wss://muon-10.kaspa.blue/kaspa/testnet-10/wrpc/borsh",
+    "wss://muon-10.kaspa.blue/kaspa/testnet-10/wrpc/borsh",
+    "wss://vector-10.kaspa.green/kaspa/testnet-10/wrpc/borsh",
+    "wss://vector-10.kaspa.green/kaspa/testnet-10/wrpc/borsh",
+    "wss://muon-10.kaspa.blue/kaspa/testnet-10/wrpc/borsh"
+  ],
+  "resources": {
+    "disk_free_gb": 48.62072832,
+    "mem_available_gb": 3.478160858154297
+  },
+  "standard_tx_mass": 100000,
+  "consensus": {
+    "bps": 10,
+    "block_compute_mass": 500000,
+    "block_storage_mass": 500000,
+    "block_transient_mass": 1000000,
+    "storage_mass_parameter_sompi": 1000000000000,
+    "source": "kaspanet/rusty-kaspa v2.1.0 TESTNET_PARAMS"
+  }
+}

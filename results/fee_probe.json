@@ -1,0 +1,80 @@
+{
+  "addr0": "kaspatest:qr90yfltgn4sm56gdtyg9hvl4mv47c0lhsugs308w8x78kljdngzgg62pkxkm",
+  "addr1": "kaspatest:qppm5pxvp0u2ahrqwunhdyzvq96uyn27q3kkdvyu9gjae4sfwajf2mwddfgvf",
+  "node": "wss://muon-10.kaspa.blue/kaspa/testnet-10/wrpc/borsh",
+  "server": {
+    "rpcApiVersion": 1,
+    "rpcApiRevision": 0,
+    "serverVersion": "2.1.0",
+    "networkId": "testnet-10",
+    "hasUtxoIndex": true,
+    "isSynced": true,
+    "virtualDaaScore": 580329561
+  },
+  "fees": {
+    "estimate": {
+      "priorityBucket": {
+        "feerate": 100.0,
+        "estimatedSeconds": 0.0002123708157583907
+      },
+      "normalBuckets": [
+        {
+          "feerate": 100.0,
+          "estimatedSeconds": 0.0002123708157583907
+        },
+        {
+          "feerate": 100.0,
+          "estimatedSeconds": 0.0002123708157583907
+        }
+      ],
+      "lowBuckets": [
+        {
+          "feerate": 100.0,
+          "estimatedSeconds": 0.0002123708157583907
+        }
+      ]
+    }
+  },
+  "probed_utxo_kas": 0.5,
+  "trials": [
+    {
+      "fee_sompi": 0,
+      "mass": 1624,
+      "storage_mass": 0,
+      "feerate": 0.0
+    },
+    {
+      "fee_sompi": 1,
+      "mass": 1624,
+      "storage_mass": 0,
+      "feerate": 0.0006157635467980296
+    },
+    {
+      "fee_sompi": 250,
+      "mass": 1624,
+      "storage_mass": 0,
+      "feerate": 0.1539408866995074
+    },
+    {
+      "fee_sompi": 1000,
+      "mass": 1624,
+      "storage_mass": 0,
+      "feerate": 0.6157635467980296
+    },
+    {
+      "fee_sompi": 5000,
+      "mass": 1624,
+      "storage_mass": 2,
+      "feerate": 3.0788177339901477
+    },
+    {
+      "fee_sompi": 20000,
+      "mass": 1624,
+      "storage_mass": 8,
+      "feerate": 12.31527093596059,
+      "submit_error": "Exception: RPC Server (remote error) -> Rejected transaction 719d91d160128dc31d327fcc1824fb718624aace3ffb9654aadfb6b4e9694408: transaction 719d91d160128dc31d327fcc1824fb718624aace3ffb9654aadfb6b4e9694408 is not standard: transaction has 20000 fees which is under the required amount of 162400 for compute mass 1624"
+    }
+  ],
+  "underfunded_local": "built-unexpectedly",
+  "submitted": "error"
+}

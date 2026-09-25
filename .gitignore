@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.venv/
+results/*.log
+wallet.seed
+*.seed
+*.key
+*.pem
+.env
+.env.*
+node_modules/
+target/
+*.elf
+data/

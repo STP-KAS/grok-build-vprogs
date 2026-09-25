@@ -1,0 +1,25 @@
+{
+  "node": "wss://vector-10.kaspa.green/kaspa/testnet-10/wrpc/borsh",
+  "findings": [
+    {
+      "id": "zero-value-storage-mass",
+      "returncode": 0,
+      "stdout": "PanicException attempt to divide by zero\n",
+      "stderr": "\nthread '<unnamed>' (1251) panicked at /root/.cargo/git/checkouts/rusty-kaspa-410e06d1fde91a92/01b532e/consensus/core/src/mass/mod.rs:463:38:\nattempt to divide by zero\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n"
+    },
+    {
+      "id": "zero-fee-sweep",
+      "mass": 1624,
+      "storage": 0,
+      "error": "Exception: RPC Server (remote error) -> Rejected transaction 10234e165ebb67f5030bdb9b840223479cc64a93ce715c8d14b737be72fcb762: transaction 10234e165ebb67f5030bdb9b840223479cc64a93ce715c8d14b737be72fcb762 is not standard: transaction has 0 fees which is under the required amount of 162400 for compute mass 1624"
+    },
+    {
+      "id": "malformed-submit",
+      "error": "TypeError: 'dict' object cannot be cast as 'Transaction'"
+    },
+    {
+      "id": "get-metrics",
+      "error": "RuntimeError: missing field `processMetrics`"
+    }
+  ]
+}

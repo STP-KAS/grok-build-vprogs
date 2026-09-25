@@ -1,0 +1,109 @@
+{
+  "sent": 24,
+  "elapsed_s": 7.489950755999871,
+  "tps": 3.2042934302037502,
+  "amount_kas": 0.5,
+  "masses_head": [
+    {
+      "mass": 20000,
+      "storage": 20000,
+      "fee": 2000000,
+      "txid": "12fe52fbb41e28823fdd5c32189ff5b5f12720d48ad43d9296d166c975183d98"
+    },
+    {
+      "mass": 20000,
+      "storage": 20000,
+      "fee": 2000000,
+      "txid": "b5860ee53f2f85475fae2b731a2afd0031e5b81221dff7d17f5531d54ca5df1e"
+    },
+    {
+      "mass": 20000,
+      "storage": 20000,
+      "fee": 2000000,
+      "txid": "736e7291d4c3056e4c63f872e4bc3aa06f2f45e5d7a93a2609cd27200840c3ed"
+    },
+    {
+      "mass": 20000,
+      "storage": 20000,
+      "fee": 2000000,
+      "txid": "2ff2655b87410edf66596c91c9256292a0b7dda0a8e540a989115aaade2e8c6a"
+    },
+    {
+      "mass": 20000,
+      "storage": 20000,
+      "fee": 2000000,
+      "txid": "381a810057f40196e97a1dff2ab4abb8ffe593eae287d1fc5cd257629f6200c1"
+    },
+    {
+      "mass": 20000,
+      "storage": 20000,
+      "fee": 2000000,
+      "txid": "adc632eb7e86084fbc1f1201c059a5ff89ceb8c8016a5c28210a3f8e8887d081"
+    },
+    {
+      "mass": 20000,
+      "storage": 20000,
+      "fee": 2000000,
+      "txid": "1d0d9197714aff2275abbbe12f935b6ec68b3470eca67154ac3e7fccfece6981"
+    },
+    {
+      "mass": 20000,
+      "storage": 20000,
+      "fee": 2000000,
+      "txid": "0453c51a97aae011a200a83e3f4fd1d9a0339de19102220cddc64703c7e7ef5d"
+    },
+    {
+      "mass": 20000,
+      "storage": 20000,
+      "fee": 2000000,
+      "txid": "897bffe27aa31721f7e9dbbf5649aa129883d57cdbacb7d6e8d57746bd6b0388"
+    },
+    {
+      "mass": 20000,
+      "storage": 20000,
+      "fee": 2000000,
+      "txid": "afcf36183ecbea31d8d7f0535992f63810b501d8cac5fbd17b814ab551301531"
+    },
+    {
+      "mass": 20000,
+      "storage": 20000,
+      "fee": 2000000,
+      "txid": "dda0ae1884b59a1048d2e2a96c8f1726dbe05f7e2ec9613578b41b0987367dec"
+    },
+    {
+      "mass": 20000,
+      "storage": 20000,
+      "fee": 2000000,
+      "txid": "adc0e6fb03298042292af1f4af3a6249d3857b56385647b8a8041ea9802183f1"
+    },
+    {
+      "mass": 20000,
+      "storage": 20000,
+      "fee": 2000000,
+      "txid": "e48b58da6312b2a8a62876e4ec99bccec394301a06277d3ed0122b87c37e2a82"
+    },
+    {
+      "mass": 20000,
+      "storage": 20000,
+      "fee": 2000000,
+      "txid": "0cc48c9cc456f72ba816fa124bdc572c2ad6b6cc7ab7bd2c0f65979de4544cb0"
+    },
+    {
+      "mass": 20000,
+      "storage": 20000,
+      "fee": 2000000,
+      "txid": "4dfc557a3f6eca3d829871ab02044a59ef988f0f076145ba41052e7fff998dbe"
+    }
+  ],
+  "mass_median": 20000,
+  "storage_median": 20000,
+  "rejects": {},
+  "node": "wss://boson-10.kaspa.red/kaspa/testnet-10/wrpc/borsh",
+  "low_feerate": 114.6331540945586,
+  "theoretical_tps_at_median_mass": 250.0,
+  "two_hour_extrapolation": {
+    "at_measured_tps": 23070.912697467003,
+    "storage_mass_per_tx": 20000,
+    "note": "Each 0.5 KAS payment with a large change output costs about C/0.5KAS = 20_000 storage mass (C = 10_000 KAS)."
+  }
+}

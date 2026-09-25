@@ -1,0 +1,51 @@
+{
+  "network": "kaspa-testnet-10",
+  "when_utc": "2026-09-25T19:20:00Z",
+  "skipped": ["local kaspad", "miner"],
+  "sdk": "kaspa python 2.1.0 (panic path rusty-kaspa 01b532e, tag v2.1.0)",
+  "rpc": "public wRPC resolver, testnet-10 only",
+  "address0": "kaspatest:qr90yfltgn4sm56gdtyg9hvl4mv47c0lhsugs308w8x78kljdngzgg62pkxkm",
+  "derivation": "m/44'/111111'/0'/0/0",
+  "address_match": true,
+  "balance_kas_start": 101203.22632563,
+  "balance_kas_treasury_end": 101189.67448563,
+  "moved_to_derived_kas": 12.0,
+  "fees_kas": 1.55184,
+  "note_500k": "Prompt said 500000 TKAS. Explorer balance at start of this run was 101203.22632563 TKAS across 349 UTXOs.",
+  "lane_b": {
+    "pattern": "1-in-1-out sweep, confirmed inputs only, fee = 100 * compute mass",
+    "tx_mass": 1624,
+    "storage_mass": 65,
+    "fee_sompi": 162400,
+    "wave1": {"offered": 320, "rpc_accepted": 320, "elapsed_s": 0.579, "offered_tps": 552.5},
+    "wave2": {"offered": 340, "rpc_accepted": 340, "elapsed_s": 0.292, "offered_tps": 1162.6, "inflight": 256, "connections": 8},
+    "sign_and_build_per_s": 13200,
+    "included": "yes, treasury fees match 660 * 162400 sompi"
+  },
+  "lane_a": {
+    "amount_kas": 0.5,
+    "sent": 24,
+    "elapsed_s": 7.49,
+    "tps": 3.20,
+    "storage_mass": 20000,
+    "sdk_calculate_transaction_mass": 20000,
+    "compute_mass_from_reject": 2036,
+    "min_fee_sompi": 203600,
+    "fee_we_paid_sompi": 2000000,
+    "rejects": 0
+  },
+  "ceiling": {
+    "bps": 10,
+    "block_compute_mass": 500000,
+    "block_storage_mass": 500000,
+    "one_in_one_out_tps": 3078.82,
+    "half_kas_with_change_tps": 250.0,
+    "source": "rusty-kaspa v2.1.0 TESTNET_PARAMS + measured tx mass"
+  },
+  "network_samples": {
+    "quiet_accepted_tps": 36.73,
+    "quiet_daa_per_s": 9.00,
+    "during_wave2_window_accepted_tps": 2064.0,
+    "during_wave2_note": "94 selected-chain blocks accepted 41532 txs in 20.1s. This wallet offered 340 txs in that window, so the 2064 figure is network-wide, not our throughput."
+  }
+}

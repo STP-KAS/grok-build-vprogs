@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TN10 wallet stress</title>
+<style>
+  :root { color-scheme: dark; }
+  body { margin: 0; font: 16px/1.45 ui-sans-serif, system-ui, sans-serif; background: #12151c; color: #e7e9ee; }
+  main { max-width: 760px; margin: 0 auto; padding: 28px 18px 64px; }
+  h1 { font-size: 1.55rem; margin: 0 0 8px; }
+  h2 { font-size: 1.05rem; margin: 28px 0 8px; }
+  p, li { color: #c9cdd6; }
+  code { font-family: ui-monospace, monospace; font-size: 0.92em; color: #f2f4f8; }
+  table { width: 100%; border-collapse: collapse; margin: 8px 0 4px; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #2a3142; vertical-align: top; }
+  th { color: #9aa3b5; font-weight: 600; font-size: 0.82rem; }
+  .num { font-variant-numeric: tabular-nums; }
+  .note { font-size: 0.92rem; color: #9aa3b5; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Kaspa TN10, wallet only</h1>
+  <p>Testnet-10. No local node, no miner. Public wRPC, 25 Sep 2026. The private write-up is the GitHub repo <code>grok-build-vprogs</code>.</p>
+
+  <h2>Ceiling vs what we offered</h2>
+  <table>
+    <tr><th>Case</th><th>Mass</th><th>Ceiling</th><th>Offered</th></tr>
+    <tr><td>1-in-1-out sweep</td><td class="num">1624 compute</td><td class="num">3079 tx/s</td><td class="num">1162 tx/s peak</td></tr>
+    <tr><td>0.5 TKAS + change</td><td class="num">20000 storage</td><td class="num">250 tx/s</td><td class="num">24 txs, all in</td></tr>
+  </table>
+  <p class="note">10 blocks/s, 500,000 mass per block (rusty-kaspa v2.1.0 TN10 params). Signing on this machine was about 13,200 tx/s. The stop was confirmed UTXOs, then public RPC, not CPU and not the mass ceiling.</p>
+
+  <h2>Lane B</h2>
+  <table>
+    <tr><th></th><th>Txs</th><th>RPC accept</th><th>Time</th><th>Offered</th></tr>
+    <tr><td>Wave 1</td><td class="num">320</td><td class="num">320</td><td class="num">0.58 s</td><td class="num">553 tx/s</td></tr>
+    <tr><td>Wave 2</td><td class="num">340</td><td class="num">340</td><td class="num">0.29 s</td><td class="num">1163 tx/s</td></tr>
+  </table>
+  <p>Fee 162,400 sompi (100 × compute mass). Both waves were included. Treasury fees match to the sompi.</p>
+
+  <h2>Network around the test</h2>
+  <table>
+    <tr><th>Window</th><th>Chain speed</th><th>Accepted tx/s</th></tr>
+    <tr><td>Quiet, before</td><td class="num">9.0 DAA/s</td><td class="num">37</td></tr>
+    <tr><td>20 s around wave 2</td><td class="num">9.0 DAA/s</td><td class="num">2064</td></tr>
+  </table>
+  <p class="note">2064 is the whole network. This wallet offered 340 txs in that burst. Other traffic was already on TN10.</p>
+
+  <h2>Wallet</h2>
+  <p>Receive 0 matched <code>m/44'/111111'/0'/0/0</code>. Start 101,203.23 TKAS. End on that address 101,189.67 TKAS. Difference 13.55 TKAS: 12 TKAS moved to other addresses of the same seed, 1.55 TKAS fees. The 10,000 TKAS output was not touched. The prompt's 500,000 TKAS was not the balance at the start of the run.</p>
+
+  <h2>Findings</h2>
+  <ul>
+    <li>Minimum fee follows compute mass, not storage mass. A 0.5 TKAS payment is rejected below 203,600 sompi even though storage mass is 20,000. The SDK's mass helper returns 20,000, so a naive fee overpays about 10×.</li>
+    <li>A zero-value output panics storage-mass math (divide by zero) instead of returning an error.</li>
+    <li><code>get_metrics</code> fails on live 2.0.1 and 2.1.0 nodes: missing <code>processMetrics</code>.</li>
+    <li>The public resolver returns both rusty-kaspa 2.0.1 and 2.1.0, both claiming to be synced.</li>
+    <li>The tic-tac-toe runbook and its Cargo.toml name different vprogs branches. The game was not played: it needs a local demo node, and the seed does not go into a website.</li>
+  </ul>
+</main>
+</body>
+</html>

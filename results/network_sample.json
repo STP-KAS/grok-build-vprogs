@@ -1,0 +1,25 @@
+{
+  "node": "wss://vector-10.kaspa.green/kaspa/testnet-10/wrpc/borsh",
+  "seconds": 20.122129917144775,
+  "virtual_daa_start": 580331652,
+  "virtual_daa_end": 580331834,
+  "daa_per_s": 9.044768160697018,
+  "chain_keys": [
+    "removedChainBlockHashes",
+    "addedChainBlockHashes",
+    "acceptedTransactionIds"
+  ],
+  "accepted_blocks_in_sample": 94,
+  "accepted_txs_in_sample": 41532,
+  "network_accepted_tps": 2063.9962156597176,
+  "removed": 0,
+  "server": {
+    "rpcApiVersion": 1,
+    "rpcApiRevision": 0,
+    "serverVersion": "2.1.0",
+    "networkId": "testnet-10",
+    "hasUtxoIndex": true,
+    "isSynced": true,
+    "virtualDaaScore": 580331840
+  }
+}

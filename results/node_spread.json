@@ -1,0 +1,64 @@
+{
+  "balance": {
+    "balance": 10120271314163
+  },
+  "utxos": 349,
+  "nodes": [
+    {
+      "url": "wss://muon-10.kaspa.blue/kaspa/testnet-10/wrpc/borsh",
+      "version": "2.1.0",
+      "synced": true,
+      "daa": 580331280,
+      "blocks": 1191742
+    },
+    {
+      "url": "wss://vector-10.kaspa.green/kaspa/testnet-10/wrpc/borsh",
+      "version": "2.1.0",
+      "synced": true,
+      "daa": 580331145,
+      "blocks": 1191607
+    },
+    {
+      "url": "wss://vector-10.kaspa.green/kaspa/testnet-10/wrpc/borsh",
+      "version": "2.1.0",
+      "synced": true,
+      "daa": 580331145,
+      "blocks": 1191607
+    },
+    {
+      "url": "wss://boson-10.kaspa.red/kaspa/testnet-10/wrpc/borsh",
+      "version": "2.0.1",
+      "synced": true,
+      "daa": 580331145,
+      "blocks": 1191607
+    },
+    {
+      "url": "wss://vector-10.kaspa.green/kaspa/testnet-10/wrpc/borsh",
+      "version": "2.1.0",
+      "synced": true,
+      "daa": 580331527,
+      "blocks": 1191990
+    },
+    {
+      "url": "wss://vector-10.kaspa.green/kaspa/testnet-10/wrpc/borsh",
+      "version": "2.1.0",
+      "synced": true,
+      "daa": 580331272,
+      "blocks": 1191734
+    },
+    {
+      "url": "wss://proton-10.kaspa.stream/kaspa/testnet-10/wrpc/borsh",
+      "version": "2.0.1",
+      "synced": true,
+      "daa": 580331145,
+      "blocks": 1191607
+    },
+    {
+      "url": "wss://vector-10.kaspa.green/kaspa/testnet-10/wrpc/borsh",
+      "version": "2.1.0",
+      "synced": true,
+      "daa": 580331273,
+      "blocks": 1191736
+    }
+  ]
+}
