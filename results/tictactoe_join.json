@@ -1,0 +1,48 @@
+{
+  "when": "2026-09-25",
+  "network": "testnet-10",
+  "api": "https://vprogs-tt.izio.fr",
+  "encoder": "live site wasm vprog_tictactoe_encoder_wasm",
+  "submit_path": "public TN10 wRPC, Python kaspa 2.1.0 Transaction.from_dict",
+  "l2_tip": 566858,
+  "settled_daa": 580229488,
+  "chain_virtual_daa_during_play": 580346489,
+  "note": "The HTTP API answered, but ttd canonical tip and the settled DAA did not move while L1 virtual DAA advanced. Boards below are the API view after the carriers were already included on L1.",
+  "sigop_fix": "Version >= 1 inputs must be submitted with sigOpCount 0 and computeBudget set. sigOpCount 1 is rejected: RpcTransactionInput.sig_op_count is inconsistent with transaction version 1.",
+  "users": {
+    "80": "5ba464c9c4c914a154a50892afe626a684ba687ff66320a16c6820c5c7c97eb7",
+    "81": "bc7ec1894f176c95e56b05af608ad2a67529e0788d65c51bb216979ee47e986c",
+    "82": "5f95e660ff2f2413cf8d0e957035e050f85cafc408e907bd3abf035d925039eb"
+  },
+  "games": {
+    "open_then_self_play": {
+      "id": "f8f4dcd43a7c54a532a0fa15c03d09dd7dd0fc951be45c592ae3af11dcec23ac",
+      "stake_sompi": 100000000,
+      "creator": 80,
+      "joiner": 82,
+      "planned_board": "X at 0,1,2 and O at 3,4. Seat 0 wins the only round.",
+      "api_after_inclusion": {"state": "Open", "board": [0, 0, 0, 0, 0, 0, 0, 0, 0]}
+    },
+    "already_playing": {
+      "id": "fe3206cdf574933bdbdb4f0503fc555ed168073ecd748487a4db745620b27cce",
+      "stake_sompi": 100000000,
+      "creator": 81,
+      "joiner": 82,
+      "last_move_at_daa": 580329997,
+      "turn_ttl_daa": 10000,
+      "api_after_center_move": {"state": "Playing", "board": [0, 0, 0, 0, 0, 0, 0, 0, 0]},
+      "note": "Seat 0 to move. The center carrier was included after last_move_at + turn_ttl, so the guest should reject it as expired. The published wasm has no Timeout builder."
+    }
+  },
+  "l1": [
+    {"kind": "fund82", "txid": "75d9801fcbfc70950615bf2d2012176219792f376b757827dbd33c36d6f82cb0", "amount_sompi": 250000000, "fee_sompi": 400500, "note": "mid-size treasury input, not the 10000 or 999 TKAS reserves"},
+    {"kind": "turn", "game": "fe3206cd", "cell": 4, "seat": 81, "txid": "17556885c9c51c9e364aed04e807ef68d48ffe03c2d9652dee37bd86aa79347e"},
+    {"kind": "join", "game": "f8f4dcd4", "seat": 82, "deposit_sompi": 100000000, "txid": "9fd24eb32ed04789db1f80876ca94beda987bcb4ef09575420c55de8959a8e1a"},
+    {"kind": "turn", "cell": 0, "seat": 80, "txid": "d13cc56438f3e598a423555858ebfcc3598823dcb7cfcb98d44c839503ad4c7b"},
+    {"kind": "turn", "cell": 3, "seat": 82, "txid": "c588fdc0f6f924244af14ff2d46959a54c31aefebeed336dd7b64fa0eef8ed98"},
+    {"kind": "turn", "cell": 1, "seat": 80, "txid": "b9d5dd7263f762e04cf430f52d471a209a55e5fb167cf19aebe76e5f38080454"},
+    {"kind": "turn", "cell": 4, "seat": 82, "txid": "01412d12b8f4af0abc52d96ebb17a0e882a5be25d668ba6a29bef94aae198237"},
+    {"kind": "turn", "cell": 2, "seat": 80, "txid": "0f445ce005a31494fb24f68a85f766c162376cb034926e0025658c337f4a978a"},
+    {"kind": "withdraw", "seat": 80, "amount_sompi": 200000000, "txid": "f49ae7d60c7afdc4c9a5cd7f0cd93ed096559391effd7a3d01dd453cb79b911d"}
+  ]
+}

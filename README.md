@@ -76,6 +76,25 @@ Getting past 3000 offered tx/s needs at least 3000 confirmed inputs and a submit
 
 A two-hour lane A at the measured 3.2 tx/s would be ~23,000 payments and ~46 TKAS of fees at the overpaid 0.02 TKAS, or ~4.7 TKAS of fees at the real 0.002036 TKAS floor. It was not run. Twenty-four payments are enough to pin the mass at 20,000.
 
+## Joining the live tic-tac-toe test
+
+The hosted game at `https://vprogs-tt.izio.fr` was joined from this wallet. The seed and the hex keys stayed in mode-600 files under `/root/.config/kaspa-tn10/`. They were not typed into the site. Carriers were built with the site's encoder wasm and submitted to public TN10 wRPC.
+
+Version-1 inputs have to go out as `sigOpCount: 0` plus `computeBudget`. Sending `sigOpCount: 1` is rejected with `RpcTransactionInput.sig_op_count is inconsistent with transaction version 1`. That matches rusty-kaspa v2.1.0: for `version >= 1` a non-zero `sig_op_count` is the wrong mass arm.
+
+Two games were already on the rollup for these keys (1 TKAS stake, one round):
+
+| Game | Seats | API state while we submitted |
+|---|---|---|
+| `f8f4dcd4…` | 80 created, open | still Open, empty board |
+| `fe3206cd…` | 81 created, 82 already joined | still Playing, empty board, `last_move_at` 580329997 |
+
+Index 82 is the joiner of the second game, so both seats there are this seed. Its turn clock is `last_move_at + turn_ttl` (10,000 DAA). Chain virtual DAA was already past that (~580,346,000) before a center move landed, so the guest should reject that turn as expired. The published wasm has no `Timeout` builder, which is the permissionless forfeit.
+
+The open game was played out on L1 by 80 and 82: join (1 TKAS covenant deposit), cells 0, 3, 1, 4, 2 so seat 0 takes the only round, then a 2 TKAS withdraw. Every one of those transactions was included. Txids are in `results/tictactoe_join.json`. Index 82 was funded with 2.5 TKAS from a mid-size treasury output. The 10,000 TKAS and 999 TKAS outputs were not spent.
+
+The demo node did not execute any of it. `GET /api/state` stayed on `l2_tip` 566858 and settled DAA 580229488 for the whole session (same numbers as before these carriers) while L1 virtual DAA moved. The HTTP API itself is live. `ttd` is not advancing its canonical chain, so the boards did not change and there is no new exit leaf to claim.
+
 ## Conclusion
 
 TN10 at 10 BPS has headroom in the quiet case (~37 tx/s) and was already near 2000 tx/s of other inclusion traffic while this wallet added a few hundred minimum-mass sweeps. The protocol ceiling for those sweeps is ~3079 tx/s. Small outputs cut that to ~250 tx/s via KIP-9 even though the minimum fee stays on compute mass. Public RPC plus a few hundred UTXOs cannot honestly claim 3000 tx/s; the signing CPU can.

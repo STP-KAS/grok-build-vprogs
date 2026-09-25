@@ -51,13 +51,18 @@
   <h2>Wallet</h2>
   <p>Receive 0 matched <code>m/44'/111111'/0'/0/0</code>. Start 101,203.23 TKAS. End on that address 101,189.67 TKAS. Difference 13.55 TKAS: 12 TKAS moved to other addresses of the same seed, 1.55 TKAS fees. The 10,000 TKAS output was not touched. The prompt's 500,000 TKAS was not the balance at the start of the run.</p>
 
+  <h2>Live tic-tac-toe</h2>
+  <p>Joined <code>vprogs-tt.izio.fr</code> with derived keys. The seed was not entered on the site. A 1 TKAS game between two of our own seats was submitted in full: join, cells 0-3-1-4-2, withdraw of 2 TKAS. Those transactions are in TN10 blocks. The demo node's L2 tip stayed at 566858, so the page still shows an empty board and there is nothing to claim yet.</p>
+
   <h2>Findings</h2>
   <ul>
     <li>Minimum fee follows compute mass, not storage mass. A 0.5 TKAS payment is rejected below 203,600 sompi even though storage mass is 20,000. The SDK's mass helper returns 20,000, so a naive fee overpays about 10×.</li>
     <li>A zero-value output panics storage-mass math (divide by zero) instead of returning an error.</li>
     <li><code>get_metrics</code> fails on live 2.0.1 and 2.1.0 nodes: missing <code>processMetrics</code>.</li>
     <li>The public resolver returns both rusty-kaspa 2.0.1 and 2.1.0, both claiming to be synced.</li>
-    <li>The tic-tac-toe runbook and its Cargo.toml name different vprogs branches. The game was not played: it needs a local demo node, and the seed does not go into a website.</li>
+    <li>Version-1 tic-tac-toe carriers must use <code>sigOpCount 0</code> and <code>computeBudget</code>. <code>sigOpCount 1</code> is rejected.</li>
+    <li>The hosted game was joined from this wallet (keys never sent to the site). A 1 TKAS self-play — join, five turns, 2 TKAS withdraw — is included on L1. The demo node stayed on L2 tip 566858, so the board did not move and the payout is not claimable yet.</li>
+    <li>The tic-tac-toe runbook and its Cargo.toml name different vprogs branches.</li>
   </ul>
 </main>
 </body>
