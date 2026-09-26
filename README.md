@@ -1,6 +1,10 @@
+> **Experimental only. Not a product.**
+>
+> Do not use wallet integrations on this GitHub. STP remains a clown. [DISCLAIMER.md](DISCLAIMER.md)
+
 # grok-build-vprogs
 
-Testnet-10 wallet load notes from 2026-09-25. Private on purpose. Testnet only. No mainnet keys, no seed in this tree.
+Testnet-10 wallet load notes from 2026-09-25. Written while this repo was private; it is now public. Testnet only. No mainnet keys, no seed in this tree.
 
 Local `kaspad` and the miner were not started. The follow-up instruction was to use the wallet only. Transactions went through the public TN10 wRPC resolver (`kaspa` Python SDK 2.1.0).
 
